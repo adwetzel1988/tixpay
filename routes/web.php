@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'index')
+    ->middleware(['auth']);
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'index')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
